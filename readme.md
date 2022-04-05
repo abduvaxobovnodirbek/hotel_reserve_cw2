@@ -20,4 +20,4 @@ https://github.com/abduvaxobovnodirbek/hotel_reserve_cw2
 
 
 Link heroku
-
+https://hotel-reservation-service.herokuapp.com/
