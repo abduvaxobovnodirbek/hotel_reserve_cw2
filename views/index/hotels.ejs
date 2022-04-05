@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <div class="container mt-5 relativePath">
+                <div class="row">
+                    <% if (hotels.length > 0) { %>
+                        <% for (let hotel of hotels) { %>
+                            <div class="col-md-3 col-sm-6 item mb-2">
+                                <div class="card item-card card-block bg-dark text-light">
+                                    <h4 class="">
+                                        Client:
+                                        <%= hotel.firstName %>
+                                            <%= hotel.lastName %>
+                                    </h4>
+                                    <h5 class="">
+                                        Room-type:
+                                        <%= hotel.roomType %>
+                                    </h5>
+                                    <p class="">
+                                        Payment by:
+                                        <%= hotel.paymentMethod %>
+                                    </p>
+                                    <a href="/hotel/<%= hotel._id %>" class="btn btn-info">View</a>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% } else { %>
+                                    <h1>No Hotel Found!</h1>
+                                    <% } %>
+                </div>
+
+            </div>
+
+
+            </div>
+            <%- include('../includes/end.ejs') %>

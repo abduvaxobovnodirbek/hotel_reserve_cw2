@@ -1,0 +1,61 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main class="container">
+                <form action="/add-hotel" method="POST">
+                    <div class="form-group row">
+                        <label for="firstName" class="col-sm-2 col-form-label">First name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="firstName" placeholder="Sally" name="firstName" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-sm-2 col-form-label">Last name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lastName" placeholder="Simon" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="roomType" class="col-sm-2 col-form-label">Room type</label>
+                        <div class="col-sm-10">
+                            <select id="roomType" name="roomType" class="form-control">
+                                <option value="single"></option>
+                                <option value="single">Single room</option>
+                                <option value="lux">Lux room</option>
+                                <option value="family">Family room</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dinner" class="col-sm-2 col-form-label">Dinner</label>
+                        <div class="col-sm-10">
+                            <select id="dinner" name="dinner" class="form-control">
+                                <option value="no"></option>
+                                <option value="yes">Yes sure</option>
+                                <option value="no">No need</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="paymentMethod" class="col-sm-2 col-form-label">Payment method</label>
+                        <div class="col-sm-10">
+                            <select id="paymentMethod" name="paymentMethod" class="form-control">
+                                <option value="cash"></option>
+                                <option value="cash">Cash</option>
+                                <option value="card">Card</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="comment" placeholder="......" name="comment" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reserve Order</button>
+                </form>
+            </main>
+            <%- include('../includes/end.ejs') %>

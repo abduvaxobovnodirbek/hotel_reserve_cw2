@@ -1,0 +1,40 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <div class="container mt-5 relativePath">
+                <h4>
+                    <%= hotel.firstName %>
+                        <%= hotel.lastName %>
+                </h4>
+                <hr>
+                <p>
+                    <span class="font-weight-bold">room</span>:
+                    <%= hotel.roomType %>
+                </p>
+                <p>
+                    <span class="font-weight-bold">Payment method</span>:
+                    <%= hotel.paymentMethod %>
+                </p>
+                <hr>
+                <p>
+                    <span class="font-weight-bold"> Dinner(must have):</span>
+                    <% if (hotel.dinner) { %>
+                        need to be provided
+                        <% } else { %>
+                            no need to provided
+                            <% } %>
+                </p>
+                <p>
+                    <span class="font-weight-bold">comments:</span>
+                    <%= hotel.comment %>
+                </p>
+                <form method="post" action="/delete-hotel">
+                    <input type="hidden" value="<%= hotel._id %>" name="hotelId" />
+                    <button class="btn btn-danger" type="submit">Delete hotel</button>
+                </form>
+                <a href="/edit-hotel/<%= hotel._id %>" class="btn btn-primary mt-2">Edit hotel Info</a>
+            </div>
+            <%- include('../includes/end.ejs') %>
